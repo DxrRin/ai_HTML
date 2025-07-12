@@ -28,6 +28,6 @@
 
 💫 <a href="https://elaraquinn.netlify.app" target="_blank" rel="noopener noreferrer">Explore her interface</a> 🚀  
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id-here/deploy-status)](https://app.netlify.com/projects/elaraquinn/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/28ca089d-496c-4e23-88b0-78cdf8eaac67/deploy-status)](https://app.netlify.com/projects/elaraquinn/deploys)
 
 </div>
