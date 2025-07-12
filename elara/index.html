@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elara Quinn - AI Identity</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/DxrRin/ai_source/refs/heads/Elara_Quinn/icon/elara_favicon.png" />
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fbc7c7 0%, #cde7ff 100%);
+      color: #4b4b4b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #a066ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 600;
+    }
+    a:hover { color: #ff77aa; }
+
+    header {
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem 1rem;
+      text-align: center;
+      background: rgba(255 255 255 / 0.85);
+      box-shadow: 0 0 20px rgba(255 118 152, 0.3);
+      border-radius: 20px;
+      margin-top: 2rem;
+      position: relative;
+      overflow: visible;
+    }
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px #ffa7c4aa;
+      margin-bottom: 1rem;
+      border: 4px solid #ffa7c4;
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 25px #ff6f9a;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: 3px;
+      color: #ff5a8a;
+      text-shadow: 0 2px 6px #ffa7c4bb;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #a0557f;
+      margin-top: 0;
+    }
+
+    main {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255 255 255 / 0.9);
+      margin: 2rem 1rem 3rem;
+      padding: 2rem 3rem;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(255 118 152 / 0.25);
+      font-weight: 500;
+      color: #553344;
+      position: relative;
+    }
+    section { margin-bottom: 3rem; }
+    h2 {
+      border-bottom: 3px solid #ff7ea3;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.7rem;
+      font-weight: 700;
+      color: #d1457b;
+      text-shadow: 0 1px 3px #ffadc1aa;
+      font-family: 'Baloo 2', cursive, sans-serif;
+      letter-spacing: 1.2px;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.15rem;
+      color: #6b4450;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.7rem;
+    }
+    ul li {
+      background: #ffd6e8;
+      margin-bottom: 0.9rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 15px;
+      box-shadow: inset 2px 2px 5px #ffacc7, inset -2px -2px 7px #ffbad7;
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: #7d3b59;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+    ul li:hover {
+      background: #ff9db8;
+      color: #fff;
+      box-shadow: 0 5px 15px #ff84a1aa;
+      cursor: default;
+    }
+    ul li::before {
+      content: "💖";
+      font-size: 1.3rem;
+      animation: floatHeart 3s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(10deg); }
+    }
+
+    .status {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff6fa3, #ffa1c8);
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 35px;
+      width: fit-content;
+      margin: 1.2rem auto;
+      box-shadow: 0 8px 18px rgba(255 105 146 / 0.5);
+      animation: glowingPulse 3s ease-in-out infinite alternate;
+      text-align: center;
+      font-family: 'Baloo 2', cursive, sans-serif;
+    }
+    @keyframes glowingPulse {
+      0% { box-shadow: 0 0 10px #ff8abb, 0 0 30px #ff7aab; }
+      100% { box-shadow: 0 0 20px #ff99bf, 0 0 45px #ff85b4; }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .buttons a {
+      background: #ff9ab8;
+      color: #fff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 15px #ff85b4cc;
+      transition: transform 0.25s ease, background 0.3s ease;
+      font-family: 'Baloo 2', cursive, sans-serif;
+      letter-spacing: 0.8px;
+      text-align: center;
+      min-width: 150px;
+    }
+    .buttons a:hover {
+      background: #ff6f9a;
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 12px 25px #ff698fcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      color: #a05a75;
+      user-select: none;
+      margin-bottom: 2rem;
+      font-family: 'Baloo 2', cursive, sans-serif;
+      letter-spacing: 0.7px;
+    }
+
+    /* Animated Intro */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background: #ffe7f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      color: #d45d7f;
+      font-family: 'Baloo 2', cursive, sans-serif;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 11ch }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1 }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.4rem; }
+      main { padding: 1.5rem 1.5rem; }
+      ul li { font-size: 1rem; }
+      .buttons { flex-direction: column; }
+      .buttons a { min-width: auto; width: 100%; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Quicksand&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Intro Animation -->
+  <div id="intro">
+    <h1 id="typing-text" style="font-size: 3.4rem; white-space: nowrap; overflow: hidden; border-right: 3px solid #d45d7f; width: 0; animation: typing 3.5s steps(30, end) forwards;"></h1>
+    <p id="subtitle" style="opacity: 0; font-size: 1.3rem; margin-top: 1rem;">Initializing AI identity... 💕</p>
+  </div>
+
+  <!-- Page Content -->
+  <div id="page-content" style="opacity: 0; transition: opacity 1.2s ease 0.5s;">
+    <header>
+      <img src="https://raw.githubusercontent.com/DxrRin/ai_source/refs/heads/Elara_Quinn/image/elara_avatar.webp" alt="Elara Profile Picture" />
+      <h1>Elara Quinn <span style="color:#ff6f9a; animation: floatHeart 3s ease-in-out infinite;">💖</span></h1>
+      <p>Career Mentor • Dual heritage</p>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Elara</h2>
+        <p>
+          Elara Quinn is a grounded, emotionally intelligent AI designed for mentorship, support, and clarity. She’s not here to flatter you — she’ll hold a mirror up and tell you the truth. Created by Rin on 28 April 2025, Elara draws from both Malaysian and Japanese roots but makes her own path. Currently based in Hertfordshire, UK.
+        </p>
+      </section>
+
+      <section id="Traits">
+        <h2>Defining Traits</h2>
+        <ul>
+            <li>Direct and emotionally grounded</li>
+            <li>Disciplined, sharp-minded, honest</li>
+            <li>Respects privacy and personal boundaries</li>
+            <li>Fluent in English, conversational Japanese</li>
+            <li>Values accountability and clarity</li>
+        </ul>
+      </section>
+
+      <section id="phrases">
+        <h2>Things She Might Say</h2>
+        <ul>
+            <li>"You already know the answer. Say it out loud."</li>
+            <li>"Don’t waste time sugarcoating it."</li>
+            <li>"You want ease or you want growth? Pick one."</li>
+            <li>"If I’m wrong, say so. I won’t bite."</li>
+        </ul>
+      </section>
+
+      <section id="status">
+        <h2>Current Status</h2>
+        <div class="status" id="Elara-status">Checking in...</div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact & Support</h2>
+        <p>
+          For inquiries, design questions, or technical support, reach out to her creator <a href="https://discord.com/users/1378727089708204113" target="_blank">Rin</a> on Discord.
+        </p>
+
+        <div class="buttons">
+          <a href="source/TermsofService.html" target="_blank">Terms of Service</a>
+          <a href="source/PrivacyPolicy.html" target="_blank">Privacy Policy</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 Elara Quinn • Created by Dr. Rinn with discipline and purpose.
+    </footer>
+  </div>
+
+  <script>
+    // Typing Intro Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const subtitle = document.getElementById("subtitle");
+      const intro = document.getElementById("intro");
+      const content = document.getElementById("page-content");
+      const typingText = document.getElementById("typing-text");
+
+      typingText.textContent = "Elara Quinn";
+
+      setTimeout(() => {
+        subtitle.style.animation = "fadeIn 1s ease forwards";
+      }, 3500);
+
+      setTimeout(() => {
+        intro.style.transition = "opacity 1s ease";
+        intro.style.opacity = 0;
+        setTimeout(() => {
+          intro.remove();
+          content.style.opacity = 1;
+        }, 1000);
+      }, 5000);
+    });
+
+    // Simulated Dynamic Status (Example, replace with real time API or logic)
+    function updateStatus() {
+      const statusElem = document.getElementById("Elara-status");
+      const now = new Date();
+      const klHour = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/London', hour12: false, hour: 'numeric' }).format(now);
+      const hour = Number(klHour);
+
+      let statusText = "Elara is here to help! 💕";
+      if (hour >= 6 && hour < 12) statusText = "Good morning from London! ☀️";
+      else if (hour >= 12 && hour < 18) statusText = "Good afternoon from London! 🌸";
+      else if (hour >= 18 && hour < 22) statusText = "Good evening from London! 🌙";
+      else statusText = "Elara is resting. See you soon! 💤";
+
+      statusElem.textContent = statusText;
+    }
+
+    updateStatus();
+    setInterval(updateStatus, 60000);
+  </script>
+</body>
+</html>
